@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Link Crwaler</h1>
+    <div id="LinkC">
+        <form action="#" name="link" method="post" onsubmit="return linkcewl()">
+            <span>Text: </span>
+            <input id="text" name="text" type="text" placeholder="type keyword">
+            <input id="web" type="url" placeholder="type website">
+            <input type="submit" name="submt" id="submit">
+        </form>
+    </div>
+</body>
+<script>
+    function linkcewl() {
+        var text = document.getElementById("text").value;
+
+        console.log(text);
+        let str = document.getElementById("web");
+        str = document.URL;
+        console.log(typeof str)
+        var hrf;
+        Array.from(str).forEach(function (element) {
+            console.log(str);
+            hrf = element.href;
+            if (hrf.includes(text)) {
+                console.log(hrf);
+
+            }
+        })
+        console.log(str);
+
+        return false;
+    };</script>
+
+</html>

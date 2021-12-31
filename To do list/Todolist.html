@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <script src="https://kit.fontawesome.com/57fcac77f2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: rgb(72, 72, 72);
+            text-transform: capitalize;
+            font-size: larger;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            background-color: rgb(6, 133, 162);
+            padding: 10px;
+        }
+        #box {
+            background-color: rgb(6, 133, 162);
+            padding: 30px;
+        }
+        #inputfeild {
+            border: none;
+            padding: 10px 20px;
+            height: 30px;
+            border-radius: 20px;
+            background-color: rgb(255, 241, 241);
+        }
+        .task {
+            background-color: rgb(180, 240, 253);
+            margin: 20px 0;
+            padding: 20px 20px;
+            border-radius: 50px;
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>to do list</h1>
+    <div id="box">
+        <input type="text" id="inputfeild" placeholder="type something...."> <button id="addbtn">+</button> 
+        <p id="todos" class="todosC"></p>
+    </div>
+</body>
+
+<script>
+
+    // mehtods-1
+    // let addbtn = document.getElementById('addbtn');
+    // let todoscon = document.getElementById('todos');
+    // let inputfeild = document.getElementById('inputfeild');
+
+    // addbtn.addEventListener('click', function () {
+
+    //     var paragraph = document.createElement('p');
+
+    //     paragraph.innerText = inputfeild.value;
+
+    //     paragraph.classList.add('#inputfeild');
+
+    //     todoscon.appendChild(paragraph);
+
+    // })
+
+    // mehtods-2
+
+    document.getElementById('addbtn').onclick = function () {
+        if (document.getElementById('inputfeild').value.length == 0) {
+            alert(' kuch toh likh de bhai')
+        } else {
+            document.querySelector('#todos').innerHTML += `<div class='task'> <span id='x'> ${document.getElementById('inputfeild').value} </span><button class='delete'> - </button></div>`;
+
+            var curntTask = document.querySelectorAll('.delete');
+            for (var i = 0; i < curntTask.length; i++) {
+                curntTask[i].onclick = function () {
+                    this.parentNode.remove();
+                }
+            }
+        }
+        var tasks = document.querySelectorAll('.task');
+        for (var i = 0; i < task.length; i++) {
+            task[i].onclick = function () {
+                this.classList.toggle('completed');
+            }
+        }
+
+        document.querySelector('#inputfeild').value = "";
+    }
+
+</script>
+
+</html>
